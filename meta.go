@@ -28,7 +28,7 @@ func SQLFromLogContext(ctx xLog.LogContext) []zap.Field {
 	// write sql cost
 	return []zap.Field{
 		zap.String(core.Category.String(), "SQL"),
-		zap.Duration(core.Duration.String(), ctx.ExecuteTime),
+		zap.Int64(core.Duration.String(), ctx.ExecuteTime.Milliseconds()),
 	}
 }
 
