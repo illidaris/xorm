@@ -43,6 +43,8 @@ func MessageFromLogContext(ctx xLog.LogContext) string {
 	args := make([]interface{}, 0)
 	if len(ctx.Args) > 100 {
 		args = ctx.Args[0:100]
+	} else {
+		args = ctx.Args
 	}
 	var rows int64
 	var rowErr error
